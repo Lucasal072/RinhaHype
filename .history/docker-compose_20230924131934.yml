@@ -1,0 +1,33 @@
+services:
+  db:
+    image: mysql
+    environment:
+        - MYSQL_ROOT_PASSWORD=1234
+    network_mode: host
+    # volumes: 
+    #   - ./data:/var/lib/mysql/xml
+    command: ["--secure-file-priv="]
+    #command: ["--secure-file-priv="]
+    #volumes:
+      #- /xml/file.xml:/var/lib/mysql/intimacoes/file.xml
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: "1.5"
+    #       memory: "2536M"
+
+  # api:
+  #   container_name: rinha_backend
+  #   build: .
+  #   command: tail -f /dev/null
+  #   working_dir: /usr/app
+  #   volumes:
+  #     - ./:/usr/app
+  #   network_mode: host
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: "0.5"
+  #         memory: "536M"
+  #   depends_on:
+  #     - db
